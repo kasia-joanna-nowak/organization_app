@@ -2,8 +2,8 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
-
 from .managers import CustomUserManager
+import datetime
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
@@ -20,3 +20,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
+
+class NewTask(models.Model):
+    task_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField("date published")
+    def __str__(self):
+        return self.task_text
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+    
