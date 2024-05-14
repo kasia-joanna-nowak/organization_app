@@ -1,7 +1,13 @@
 {% if latest_task_list %}
+<h2>My ToDo list </h2>
+<a class="btn" href="/add_task/">
+<button> Add task</button>
+</a>
+<br>
+<br>
     <ul>
     {% for task in latest_task_list %}
-        <li><a href="/todo/{{ task.id }}/">{{ task.task_text }}</a></li>
+        <li><a href="/todo/{{ task.id }}/">{{ task.task_text }}</a> </li> <br><button>delete</button><br>
         <br>
     {% endfor %}
     </ul>
