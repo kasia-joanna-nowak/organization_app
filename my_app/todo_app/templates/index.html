@@ -1,7 +1,8 @@
 {% if latest_task_list %}
     <ul>
     {% for task in latest_task_list %}
-        <li><a href="/users/{{ task.id }}/">{{ task.task_text }}</a></li>
+        <li><a href="/todo/{{ task.id }}/">{{ task.task_text }}</a></li>
+        <br>
     {% endfor %}
     </ul>
 {% else %}
