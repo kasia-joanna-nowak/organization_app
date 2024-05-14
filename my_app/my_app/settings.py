@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = "users.CustomUser"
 
 INSTALLED_APPS = [
+    'todo_app.apps.TodoAppConfig',
     'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
