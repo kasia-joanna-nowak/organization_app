@@ -8,4 +8,5 @@ app_name = "todo_app"
 urlpatterns = [
     path('', views.todo),
     path('<int:task_id>/', views.task_detail),
+    path('add_task/', views.add_task)
 ]
