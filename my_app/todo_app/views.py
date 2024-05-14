@@ -3,6 +3,9 @@ from django.http import Http404
 from django.http import HttpResponse
 from .models import NewTask
 from django.template import loader
+from django.db import models
+from django.utils import timezone
+
 
 # Create your views here.
 def todo(request):
@@ -15,6 +18,6 @@ def task_detail(request, task_id):
     return render(request, "task_detail.html", {"task":task, "task_id":task_id})
 
 
-# def task_status(request, task_id):
-#     response = "You're  looking at the status of the task %s"
-#     return HttpResponse(response % task_id) 
+def add_task(request):
+    return render(request, "add_task.html")
+    
