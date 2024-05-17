@@ -18,7 +18,7 @@ class NewTask(models.Model):
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
     
 class StatusOfTask(models.Model):
-    task = models.ForeignKey(NewTask)
+    task = models.ForeignKey(NewTask, on_delete=models.CASCADE)
     status_text = models.CharField(max_length=100)
     def __str__(self):
         return self.status_text
