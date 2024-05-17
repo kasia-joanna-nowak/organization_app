@@ -17,3 +17,9 @@ class NewTask(models.Model):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
     
+class StatusOfTask(models.Model):
+    task = models.ForeignKey(NewTask)
+    status_text = models.CharField(max_length=100)
+    def __str__(self):
+        return self.status_text
+
