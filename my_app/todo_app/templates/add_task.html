@@ -1,22 +1,23 @@
 <form action="" method="post" class="task_form">
+    {% csrf_token %}
     <div class="task_form">
         <label for="task">Enter task: </label>
         <input id="task" type="text", name="task">
     </div>
     <div>
-        <input type="checkbox" id="status" name="status"  
+        <input type="radio" id="status" name="status"  
         />
         <label for="status">ToDo</label>
-        <input type="checkbox" id="status" name="status"  
+        <input type="radio" id="status" name="status"  
         />
         <label for="status">In progress</label>
-        <input type="checkbox" id="status" name="status"  
+        <input type="radio" id="status" name="status"  
         />
         <label for="status">Done</label>
     </div>
     <br>
     <a class="btn">
-        <button> Add task</button>
+        <button> Submit</button>
         </a>
 
 </form>
