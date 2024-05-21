@@ -29,7 +29,18 @@ The purpose of the application is to help your family stay organized. It will su
 
 Install requirements which are in the main folder. Type this command:
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
+
+Migrate:
+
+    python manage.py migrate
+
+And then start the server (default: http://localhost:8000)
+
+    python manage.py runserver
+
+Now you can browse the [API](http://localhost:8000/api/)
+or start on the [landing page](http://localhost:8000/)
 
 
 ## Project Status
