@@ -1,25 +1,37 @@
-# About The Project
-Organization app is a simple app that helps you to keep your family's life well-organized
+# Organization App
+Organization app is a simple app built with Django that helps you to keep your family's life well-organized.
+
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Setup](#setup)
+* [Project Status](#project-status)
+
+
+
+## General Information
+
+The purpose of the application is to help your family stay organized. It will support you with keeping track of planned tasks or events 
+
+## Technologies Used
+- Django - 4.2.11
 
 
 
 ## Features
+- Add a task to your calendar
+- Put a status of a task
+- Add an event to your calendar
+- Delete a task when it's done 
 
-- Add a task or an event to your calendar
-- Put a status on your task (in progress, to do or done)
-- Change a status of your task
-- Delete a task when it's done
+## Setup
 
-## Tech
+Install requirements which are in the main folder. Type this command:
 
-Dillinger uses a number of open source projects to work properly:
-
-- [Django] 
-
-## Installation
-
-Organization app requires [Django](https://pypi.org/project/Django/) 4.2.11 to run.
+pip install -r requirements.txt
 
 
-
+## Project Status
+Project is: _in progress_ 
 
