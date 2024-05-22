@@ -1,4 +1,4 @@
-<form action="" method="post" class="task_form">
+<!-- <form action="" method="post" class="task_form">
     {% csrf_token %}
     <div class="task_form">
         <label for="task">Enter task: </label>
@@ -19,5 +19,12 @@
     <a class="btn">
         <button> Submit</button>
         </a>
+
+</form> -->
+
+<form method="POST" action="{% url 'todo_app:add_task' %}" enctype="multipart/form-data" >
+    {% csrf_token %}
+{{ form }}
+<button> Submit</button>
 
 </form>
