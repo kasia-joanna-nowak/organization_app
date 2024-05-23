@@ -9,7 +9,7 @@
 <br>
     <ul>
     {% for task in latest_task_list %}
-        <li><a href="/todo/{{ task.id }}/">{{ task.task_text }}</a> </li> <br><button>delete</button><br>
+        <li><a href="/todo/{{ task.id }}/">{{ task.task_text }} [{{ task.status_text }}]</a> </li> <br><button>delete</button><br>
         <br>
     {% endfor %}
     </ul>
