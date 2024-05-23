@@ -25,6 +25,6 @@
 <form method="POST" action="{% url 'todo_app:add_task' %}" enctype="multipart/form-data" >
     {% csrf_token %}
 {{ form }}
-<button> Submit</button>
+<button type="submit"> Submit</button>
 
 </form>

@@ -13,9 +13,7 @@ class NewTask(models.Model):
     
     def __str__(self):
         return self.task_text
-    def was_published_recently(self):
-        now = timezone.now()
-        return now - datetime.timedelta(days=1) <= self.pub_date <= now
+
     
 class StatusOfTask(models.Model):
     task = models.ForeignKey(NewTask, on_delete=models.CASCADE)
