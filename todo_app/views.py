@@ -1,10 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404,  redirect
 from django.http import Http404
 from django.http import HttpResponse
 from .models import NewTask
 from django.template import loader
 from django.db import models
 from django.utils import timezone
+from .forms import TaskForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -15,9 +17,17 @@ def todo(request):
     
 def task_detail(request, task_id):
     task = get_object_or_404(NewTask, pk=task_id)
-    return render(request, "task_detail.html", {"task":task, "task_id":task_id})
+    return render(request, "task_detail.html", {"task":task})
 
 
 def add_task(request):
-    return render(request, "add_task.html")
+    if request.POST:
+        form = TaskForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'The task has been added.')
+            return redirect('todo_app:todo')
+    else:
+        form = TaskForm()
+    return render(request, "add_task.html", {'form': form})
     
