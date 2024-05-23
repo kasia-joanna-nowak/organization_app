@@ -13,7 +13,7 @@ from django.forms import ModelForm
 
 
 
-class StatusForm(forms.Form):
+class TaskForm(forms.Form):
     class Meta:
         model = NewTask
         fields ="__all__"
