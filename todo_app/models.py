@@ -9,7 +9,8 @@ import datetime
 
 class NewTask(models.Model):
     task_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField("date published")
+    pub_date = models.DateTimeField("date published", default=timezone.now)
+    status_text = models.CharField(max_length=100,blank=True)
     
     def __str__(self):
         return self.task_text
