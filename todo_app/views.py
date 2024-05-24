@@ -17,11 +17,11 @@ def todo(request):
     
 def task_detail(request, task_id):
     task = get_object_or_404(NewTask, pk=task_id)
-    return render(request, "task_detail.html", {"task":task})
+    return render(request, "edit_task.html", {"task":task})
 
 
 def add_task(request):
-    if request.POST:
+    if request.method == 'POST':
         form = TaskForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
@@ -31,3 +31,11 @@ def add_task(request):
         form = TaskForm()
     return render(request, "add_task.html", {'form': form})
     
+
+def delete_task(request, id):
+    task = get_object_or_404(NewTask, pk=id)
+    task.delete()
+    messages.success(request, 'The task was deleted')
+    return redirect('todo_app:todo')
+
+
