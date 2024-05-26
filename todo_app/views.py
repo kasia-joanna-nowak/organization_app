@@ -15,7 +15,7 @@ def todo(request):
     context = {"latest_task_list": latest_task_list}
     return render(request, "index.html", context)
     
-def task_detail(request, task_id):
+def edit_task(request, task_id):
     task = get_object_or_404(NewTask, pk=task_id)
     return render(request, "edit_task.html", {"task":task})
 
